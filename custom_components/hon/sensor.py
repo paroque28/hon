@@ -517,6 +517,7 @@ SENSORS: dict[str, tuple[SensorEntityDescription, ...]] = {
             name="Compressor Frequency",
             icon="mdi:information",
             device_class=SensorDeviceClass.FREQUENCY,
+            native_unit_of_measurement="Hz",
         ),
     ),
     "REF": (
