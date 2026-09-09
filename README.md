@@ -406,8 +406,8 @@ Support has been confirmed for these **24 models**, but many more will work. Ple
 - HD90-A2959
 - HD90-A2959S
 - HD90-A3959
-- MHDE80-D367TU1 (Haier X7, White)
-- MHDE80-D367GTU1 (Haier X7, Grey)
+- MHDE80-D367TU1
+- MHDE80-D367GTU1
 
 #### Hoover
 - HLE H8A2TE-S
