@@ -842,9 +842,8 @@ class HonSensorEntity(HonEntity, SensorEntity):
         """Handle updated data from the coordinator."""
         value = self._device.get(self.entity_description.key, "")
         if self.entity_description.key == "programName":
-            if not (options := self._device.settings.get("startProgram.program")):
-                raise ValueError
-            self._attr_options = options.values + ["No Program"]
+            options = self._device.settings.get("startProgram.program")
+            self._attr_options = (options.values if options else []) + ["No Program"]
         elif self.entity_description.option_list is not None:
             self._attr_options = list(self.entity_description.option_list.values())
             value = str(get_readable(self.entity_description, value))
