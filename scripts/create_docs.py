@@ -76,13 +76,19 @@ def generate_text(entites, models):
         example = f"example_{appliance.lower()}.png"
         if (Path(__file__).parent.parent / "assets" / example).exists():
             text += f"### {APPLIANCES[appliance]} Example\n![{APPLIANCES[appliance]}](assets/{example})\n\n"
-        support_number = sum([len(e) for e in models[appliance.lower()].values()])
+        appliance_models = models.get(appliance.lower()) or {}
+        support_number = sum([len(e) for e in appliance_models.values()])
+        confirmed = (
+            f"Support has been confirmed for these **{support_number} models**, but many more"
+            if support_number
+            else "No models have been confirmed yet, but many"
+        )
         text += (
-            f"### Supported {APPLIANCES[appliance]} models\nSupport has been confirmed for these "
-            f"**{support_number} models**, but many more will work. Please add already supported devices "
+            f"### Supported {APPLIANCES[appliance]} models\n{confirmed} will work. "
+            f"Please add already supported devices "
             f"[with this form to complete the list](https://forms.gle/bTSD8qFotdZFytbf8).\n"
         )
-        for brand, items in models[appliance.lower()].items():
+        for brand, items in appliance_models.items():
             text += f"\n#### {brand[0].upper()}{brand[1:]}\n- "
             text += "\n- ".join(items) + "\n"
         categories = {k: categories[k] for k in ENTITY_CATEGORY_SORT if k in categories}
@@ -99,19 +105,21 @@ def generate_text(entites, models):
 
 
 def update_readme(text, entities, models, file_name="README.md"):
-    with open(Path(__file__).parent.parent / file_name, "r") as file:
+    path = Path(__file__).parent.parent / file_name
+    with open(path, "r", encoding="utf-8") as file:
         readme = file.read()
     readme = re.sub(
         "(## Supported Appliances\n)(?:.|\\s)+?([^#]## |\\Z)",
         f"\\1{text}\\2",
         readme,
-        re.DOTALL,
+        flags=re.DOTALL,
     )
+    readme = re.sub("badge/Appliances-\\d+", f"badge/Appliances-{len(entities)}", readme)
     entities = sum(len(x) for cat in entities.values() for x in cat.values())
     readme = re.sub("badge/Entities-\\d+", f"badge/Entities-{entities}", readme)
     models = sum(len(x) for cat in models.values() for x in cat.values())
     readme = re.sub("badge/Models-\\d+", f"badge/Models-{models}", readme)
-    with open(Path(__file__).parent.parent / file_name, "w") as file:
+    with open(path, "w", encoding="utf-8") as file:
         file.write(readme)
 
 

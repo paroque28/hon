@@ -9,9 +9,9 @@ Home Assistant integration for [Haier's mobile app hOn](https://hon-smarthome.co
 ---
 
 [![Supported Languages](https://img.shields.io/badge/Languages-28-royalblue)](https://github.com/Andre0512/hon#supported-languages)
-[![Supported Appliances](https://img.shields.io/badge/Appliances-11-forestgreen)](https://github.com/Andre0512/hon#supported-appliances)
+[![Supported Appliances](https://img.shields.io/badge/Appliances-12-forestgreen)](https://github.com/Andre0512/hon#supported-appliances)
 [![Supported Models](https://img.shields.io/badge/Models-134-yellowgreen)](https://github.com/Andre0512/hon#supported-appliances)
-[![Supported Entities](https://img.shields.io/badge/Entities-320-crimson)](https://github.com/Andre0512/hon#supported-appliances)  
+[![Supported Entities](https://img.shields.io/badge/Entities-334-crimson)](https://github.com/Andre0512/hon#supported-appliances)  
 
 ## Supported Appliances
 _Click to expand..._
@@ -77,6 +77,7 @@ Support has been confirmed for these **22 models**, but many more will work. Ple
 | Ch2O Cleaning |  | `binary_sensor` | `ch2oCleaningStatus` |
 | Coiler Temperature Indoor | `thermometer` | `sensor` | `tempCoilerIndoor` |
 | Coiler Temperature Outside | `thermometer` | `sensor` | `tempCoilerOutdoor` |
+| Compressor Frequency | `information` | `sensor` | `compressorFrequency` |
 | Defrost Temperature Outdoor | `thermometer` | `sensor` | `tempDefrostOutdoor` |
 | Filter Replacement |  | `binary_sensor` | `filterChangeStatusLocal` |
 | In Air Temperature Outdoor | `thermometer` | `sensor` | `tempInAirOutdoor` |
@@ -192,6 +193,38 @@ Support has been confirmed for these **7 models**, but many more will work. Plea
 | Remaining Time | `timer` | `sensor` | `remainingTimeMM` |
 | Rinse Aid | `spray-bottle` | `binary_sensor` | `rinseAidStatus` |
 | Salt | `shaker-outline` | `binary_sensor` | `saltStatus` |
+
+</details>
+
+<details>
+<summary>Freezer</summary>
+
+### Supported Freezer models
+No models have been confirmed yet, but many will work. Please add already supported devices [with this form to complete the list](https://forms.gle/bTSD8qFotdZFytbf8).
+
+### Freezer Entities
+#### Controls
+| Name | Icon | Entity | Key |
+| --- | --- | --- | --- |
+| Program Start | `play` | `button` | `startProgram` |
+| Program Stop | `stop` | `button` | `stopProgram` |
+| Super Cool | `snowflake` | `switch` | `quickModeZ1` |
+| Super Freeze | `snowflake-variant` | `switch` | `quickModeZ2` |
+| Temperature | `thermometer` | `select` | `settings.tempSelZ3` |
+#### Configs
+| Name | Icon | Entity | Key |
+| --- | --- | --- | --- |
+| Program |  | `select` | `startProgram.program` |
+| Zone | `radiobox-marked` | `select` | `startProgram.zone` |
+#### Sensors
+| Name | Icon | Entity | Key |
+| --- | --- | --- | --- |
+| Door Status | `fridge` | `binary_sensor` | `doorStatusZ2` |
+| Error | `math-log` | `sensor` | `errors` |
+| Room Temperature | `home-thermometer-outline` | `sensor` | `tempEnv` |
+| Super Cool | `snowflake` | `binary_sensor` | `quickModeZ1` |
+| Super Freeze | `snowflake-variant` | `binary_sensor` | `quickModeZ2` |
+| Temperature | `snowflake-thermometer` | `sensor` | `tempSelZ3` |
 
 </details>
 
