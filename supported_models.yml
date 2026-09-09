@@ -57,6 +57,8 @@ td:
     - "HD90-A2959"
     - "HD90-A2959S"
     - "HD90-A3959"
+    - "MHDE80-D367TU1"        # Haier X7 (White)
+    - "MHDE80-D367GTU1"       # Haier X7 (Grey)
   hoover:
     - "HLE H8A2TE-S"
     - "HLE H9A2TCE-80"
