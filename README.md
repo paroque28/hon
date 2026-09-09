@@ -16,7 +16,7 @@ Home Assistant integration for [Haier's mobile app hOn](https://hon-smarthome.co
 
 [![Supported Languages](https://img.shields.io/badge/Languages-28-royalblue)](https://github.com/Andre0512/hon#supported-languages)
 [![Supported Appliances](https://img.shields.io/badge/Appliances-11-forestgreen)](https://github.com/Andre0512/hon#supported-appliances)
-[![Supported Models](https://img.shields.io/badge/Models-135-yellowgreen)](https://github.com/Andre0512/hon#supported-appliances)
+[![Supported Models](https://img.shields.io/badge/Models-136-yellowgreen)](https://github.com/Andre0512/hon#supported-appliances)
 [![Supported Entities](https://img.shields.io/badge/Entities-320-crimson)](https://github.com/Andre0512/hon#supported-appliances)
 
 ## Takedown Story
@@ -398,7 +398,7 @@ Support has been confirmed for these **11 models**, but many more will work. Ple
 ![Tumble Dryer](assets/example_td.png)
 
 ### Supported Tumble Dryer models
-Support has been confirmed for these **23 models**, but many more will work. Please add already supported devices [with this form to complete the list](https://forms.gle/bTSD8qFotdZFytbf8).
+Support has been confirmed for these **24 models**, but many more will work. Please add already supported devices [with this form to complete the list](https://forms.gle/bTSD8qFotdZFytbf8).
 
 #### Haier
 - HD80-A3959
@@ -406,7 +406,8 @@ Support has been confirmed for these **23 models**, but many more will work. Ple
 - HD90-A2959
 - HD90-A2959S
 - HD90-A3959
-- MHDE80-D367TU1
+- MHDE80-D367TU1 (Haier X7, White)
+- MHDE80-D367GTU1 (Haier X7, Grey)
 
 #### Hoover
 - HLE H8A2TE-S
